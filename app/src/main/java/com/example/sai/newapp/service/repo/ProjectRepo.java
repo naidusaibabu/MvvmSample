@@ -20,7 +20,7 @@ public class ProjectRepo {
     private GitHubService gitHubService;
     private static ProjectRepo projectRepository;
     private ProjectRepo() {
-        //TODO this gitHubService instance will be injected using Dagger in part #2 ...
+        //TODO this gitHubService instance will be injected using Dagger ...
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ServiceConstants.GIT_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -30,7 +30,7 @@ public class ProjectRepo {
     }
 
     public synchronized static ProjectRepo getInstance() {
-        //TODO No need to implement this singleton in Part #2 since Dagger will handle it ...
+        //TODO No need to implement this singleton , since Dagger will handle it ...
         if (projectRepository == null) {
             projectRepository = new ProjectRepo();
         }

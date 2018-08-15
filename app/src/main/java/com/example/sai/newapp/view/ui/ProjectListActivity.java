@@ -24,7 +24,7 @@ import java.util.List;
 public class ProjectListActivity extends AppCompatActivity {
     private List<Project> projectList = new ArrayList<>();
     private RecyclerView projListRV;
-    private LinearLayoutManager li;
+    private LinearLayoutManager layoutManager;
     private ProjectAdapter mAdapter;
     private ProjectListViewModel viewModel;
 
@@ -33,10 +33,9 @@ public class ProjectListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         projListRV = findViewById(R.id.projListRV);
-        li = new LinearLayoutManager(ProjectListActivity.this);
-        projListRV.setLayoutManager(li);
-        viewModel =
-                ViewModelProviders.of(this).get(ProjectListViewModel.class);
+        layoutManager = new LinearLayoutManager(ProjectListActivity.this);
+        projListRV.setLayoutManager(layoutManager);
+        viewModel = ViewModelProviders.of(this).get(ProjectListViewModel.class);
     }
 
     @Override
